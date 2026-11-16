@@ -4,10 +4,13 @@ on:
   workflow_dispatch:
     inputs:
       command:
-        description: "check | archive | status"
+        description: "check | archive | status | share | unshare | probe"
         default: check
       pattern:
         description: "archive: regex of in/ file names to move to in_processed/"
+        default: ""
+      file_id:
+        description: "share / unshare / probe: Drive file id"
         default: ""
 
 permissions:
@@ -30,5 +33,10 @@ jobs:
       - env:
           CMD: ${{ inputs.command }}
           PATTERN: ${{ inputs.pattern }}
+          FILE_ID: ${{ inputs.file_id }}
         run: |
-          case "$CMD" in archive) python pipeline/drive.py archive --pattern "$PATTERN";; status) python pipeline/drive.py status --work /tmp/st && ls -R /tmp/st;; *) python pipeline/drive.py check;; esac
+          case "$CMD" in archive) python pipeline/drive.py archive --pattern "$PATTERN";; status) python pipeline/drive.py status --work /tmp/st && ls -R /tmp/st;;
+            share|unshare) python pipeline/drive.py "$CMD" --id "$FILE_ID";;
+            probe) URL=$(python pipeline/drive.py share --id "$FILE_ID"); sleep 5
+                   curl -sSL -o /tmp/v.bin -w "http %{http_code} type %{content_type} bytes %{size_download}\n" "$URL" || true
+                   file /tmp/v.bin; python pipeline/drive.py unshare --id "$FILE_ID";; *) python pipeline/drive.py check;; esac

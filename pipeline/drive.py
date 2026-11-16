@@ -248,6 +248,24 @@ def cmd_status(out_dir):
     print(json.dumps({k: v for k, v in status.items() if k != "known_titles"}, ensure_ascii=False, indent=2))
 
 
+def public_url(file_id):
+    return f"https://drive.usercontent.google.com/download?id={file_id}&export=download&confirm=t"
+
+
+def cmd_share(file_id, on=True):
+    """Make one video readable by link for Instagram to fetch on its posting day, or undo that."""
+    svc = service()
+    if on:
+        svc.permissions().create(fileId=file_id, body={"type": "anyone", "role": "reader"},
+                                 fields="id").execute()
+        print(public_url(file_id))
+    else:
+        for p in svc.permissions().list(fileId=file_id, fields="permissions(id,type)").execute()["permissions"]:
+            if p["type"] == "anyone":
+                svc.permissions().delete(fileId=file_id, permissionId=p["id"]).execute()
+        print("unshared", file_id)
+
+
 def cmd_check():
     about = service().about().get(fields="user(emailAddress)").execute()
     print("Token OK for", about["user"]["emailAddress"])
@@ -258,11 +276,12 @@ def cmd_check():
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("cmd", choices=["pull", "push", "deliver", "check", "archive", "status"])
+    ap.add_argument("cmd", choices=["pull", "push", "deliver", "check", "archive", "status", "share", "unshare"])
     ap.add_argument("--work")
     ap.add_argument("--zip")
     ap.add_argument("--slug")
     ap.add_argument("--pattern")
+    ap.add_argument("--id")
     a = ap.parse_args()
     if a.cmd == "pull":
         cmd_pull(pathlib.Path(a.work))
@@ -270,6 +289,8 @@ if __name__ == "__main__":
         cmd_push(pathlib.Path(a.work))
     elif a.cmd == "deliver":
         cmd_deliver(pathlib.Path(a.zip), a.slug)
+    elif a.cmd in ("share", "unshare"):
+        cmd_share(a.id, on=a.cmd == "share")
     elif a.cmd == "status":
         cmd_status(pathlib.Path(a.work))
     elif a.cmd == "archive":
