@@ -55,6 +55,10 @@ jobs:
         if: always() && hashFiles('work/run_result.json') != ''
         run: python pipeline/drive.py push --work work
 
+      - name: Snapshot queue, scripts, ideas and prompts
+        if: always()
+        run: python pipeline/drive.py status --work /tmp/pub || echo "status snapshot failed"
+
       - name: Publish bundle branch
         if: always() && hashFiles('work/run_result.json') != ''
         run: |

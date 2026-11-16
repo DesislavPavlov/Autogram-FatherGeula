@@ -1,0 +1,40 @@
+name: Scripts — upload for approval / render approved
+
+# upload: Claude's daily task force-pushes the `scripts` branch = main + scripts_new/<NN - TITLE>.md
+# render: every 2 hours, Docs you moved to FatherGeula/scripts/approved are voiced into VO/in
+on:
+  push:
+    branches: [scripts]
+  schedule:
+    - cron: "7 */2 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: scripts
+  cancel-in-progress: false
+
+jobs:
+  scripts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      GDRIVE_CLIENT_ID: ${{ secrets.GDRIVE_CLIENT_ID }}
+      GDRIVE_CLIENT_SECRET: ${{ secrets.GDRIVE_CLIENT_SECRET }}
+      GDRIVE_REFRESH_TOKEN: ${{ secrets.GDRIVE_REFRESH_TOKEN }}
+      ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+      ELEVENLABS_VOICE_ID: ${{ secrets.ELEVENLABS_VOICE_ID }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -q google-api-python-client google-auth
+      - name: Upload new scripts to scripts/pending
+        if: github.event_name == 'push' && hashFiles('scripts_new/*.md') != ''
+        run: python pipeline/scripts.py upload-pending --dir scripts_new
+      - name: Render approved scripts with ElevenLabs
+        if: github.event_name != 'push'
+        run: python pipeline/scripts.py render

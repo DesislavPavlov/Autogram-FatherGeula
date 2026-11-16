@@ -2,6 +2,12 @@
 
 Daily, with no computer involved:
 
+0. **Scripts:** Claude keeps the voiceover queue 2 days ahead. New scripts land in `FatherGeula/scripts/pending`
+   as Google Docs. Edit one if needed, then move it to `scripts/approved`. Every 2 hours, `scripts.yml` renders
+   approved scripts with ElevenLabs v3 (Natural, speed 0.85) into `FatherGeula/VO/in`. Ideas come from
+   `FatherGeula/ideas` (separate ideas with a blank line); when that runs out, Claude picks them itself. The
+   writing rules come from `FatherGeula/prompts/script_master_prompt`.
+
 1. **05:17 Sofia: `align.yml`** (GitHub Actions) pulls `FatherGeula/VO/in` from Drive, runs
    `notebook/Father_Geula_Complete.ipynb` headless (one VO+script pair per day), pushes `out/` and the
    bundle back to Drive, moves the pair to `in_processed/`, and publishes the bundle on the `bundles` branch.
@@ -22,5 +28,5 @@ MOVE_WHEN_DONE=True are forced).
 3. `pip install google-auth-oauthlib && python tools/get_refresh_token.py client_secret.json`,
    sign in as the account that owns `FatherGeula/VO`.
 4. Repo → Settings → Secrets and variables → Actions → add `GDRIVE_CLIENT_ID`, `GDRIVE_CLIENT_SECRET`,
-   `GDRIVE_REFRESH_TOKEN`.
+   `GDRIVE_REFRESH_TOKEN`, `ELEVENLABS_API_KEY`, `ELEVENLABS_VOICE_ID`.
 5. Actions → "Align VO and build bundle" → Run workflow (first run downloads the 1.2 GB model, ~5 min).

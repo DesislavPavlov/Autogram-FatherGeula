@@ -8,6 +8,7 @@ Env: GDRIVE_CLIENT_ID, GDRIVE_CLIENT_SECRET, GDRIVE_REFRESH_TOKEN
   python drive.py deliver --zip FILE --slug S upload job zip to jobs/, trash S's bundle + kickoff
   python drive.py check                       verify the token and show what's in in/
   python drive.py archive --pattern REGEX     move matching in/ files to in_processed/
+  python drive.py status  --work DIR          queue/scripts/ideas/prompts snapshot -> DIR
 """
 import argparse, io, json, mimetypes, os, pathlib, sys
 
@@ -195,6 +196,58 @@ def cmd_archive(pattern):
     print(f"{len(hits)} moved. Still in in/: {', '.join(left) or '(empty)'}")
 
 
+def export_text(f):
+    """Plain text of a Drive file (native Doc -> text/plain, else raw bytes as UTF-8)."""
+    svc = service()
+    if f["mimeType"] == GDOC:
+        data = svc.files().export(fileId=f["id"], mimeType="text/plain").execute()
+    elif f["mimeType"].startswith("application/vnd.google-apps"):
+        return None
+    else:
+        data = svc.files().get_media(fileId=f["id"]).execute()
+    return data.decode("utf-8-sig", "replace") if isinstance(data, bytes) else data
+
+
+def _num(name):
+    import re
+    m = re.match(r"\s*(\d+)\s*[-–—]", name)
+    return int(m.group(1)) if m else None
+
+
+def cmd_status(out_dir):
+    """Snapshot for Claude's daily task: queue depth, script approval state, ideas, prompts."""
+    out_dir.mkdir(parents=True, exist_ok=True)
+    base, root = vo_path(), vo_path().rsplit("/", 1)[0]
+    stems = lambda files: sorted({pathlib.Path(f["name"]).stem for f in files})
+    in_files = children(folder(base + "/in"), folders=False)
+    audio = {pathlib.Path(f["name"]).stem for f in in_files if f["name"].lower().endswith((".mp3", ".wav", ".m4a"))}
+    status = {"in_pairs": sorted(s for s in stems(in_files) if s in audio)}
+    for state in ("pending", "approved", "rendered"):
+        status[f"scripts_{state}"] = stems(children(folder(f"{root}/scripts/{state}"), folders=False))
+    known = stems(children(folder(base + "/in_processed"), folders=False)) + stems(in_files) \
+        + status["scripts_pending"] + status["scripts_approved"] + status["scripts_rendered"]
+    nums = [n for n in map(_num, known) if n is not None]
+    status["known_titles"] = sorted(set(known), key=lambda t: (_num(t) or 0, t))
+    status["next_number"] = (max(nums) + 1) if nums else 1
+    status["queue_days"] = len(status["in_pairs"]) + len(status["scripts_approved"]) + len(status["scripts_pending"])
+    root_files = children(folder(root), folders=False)
+    ideas = [f for f in root_files if pathlib.Path(f["name"]).stem.lower() == "ideas"]
+    status["ideas_file"] = ideas[0]["name"] if ideas else None
+    if ideas:
+        (out_dir / "ideas.txt").write_text(export_text(ideas[0]) or "", encoding="utf-8")
+    pdir = out_dir / "prompts"
+    pdir.mkdir(exist_ok=True)
+    status["prompts"] = []
+    for f in children(folder(root + "/prompts"), folders=False):
+        txt = export_text(f)
+        if txt is not None:
+            name = pathlib.Path(f["name"]).stem + ".md"
+            (pdir / name).write_text(txt, encoding="utf-8")
+            status["prompts"].append(name)
+    (out_dir / "drive_status.json").write_text(json.dumps(status, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(json.dumps({k: v for k, v in status.items() if k != "known_titles"}, ensure_ascii=False, indent=2))
+
+
 def cmd_check():
     about = service().about().get(fields="user(emailAddress)").execute()
     print("Token OK for", about["user"]["emailAddress"])
@@ -205,7 +258,7 @@ def cmd_check():
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("cmd", choices=["pull", "push", "deliver", "check", "archive"])
+    ap.add_argument("cmd", choices=["pull", "push", "deliver", "check", "archive", "status"])
     ap.add_argument("--work")
     ap.add_argument("--zip")
     ap.add_argument("--slug")
@@ -217,6 +270,8 @@ if __name__ == "__main__":
         cmd_push(pathlib.Path(a.work))
     elif a.cmd == "deliver":
         cmd_deliver(pathlib.Path(a.zip), a.slug)
+    elif a.cmd == "status":
+        cmd_status(pathlib.Path(a.work))
     elif a.cmd == "archive":
         cmd_archive(a.pattern)
     else:
