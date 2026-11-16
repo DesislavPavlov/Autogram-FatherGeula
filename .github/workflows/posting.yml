@@ -1,0 +1,54 @@
+name: Posting — share/unshare a reel, publish caption preview
+
+# Claude's daily posting task:
+#   - dispatches this with command=share / unshare and file_id (the reel's Drive id) around the Windsor post
+#   - force-pushes the `posting` branch (main + posting/upcoming.md) to refresh the "Upcoming captions" Doc
+on:
+  push:
+    branches: [posting]
+  workflow_dispatch:
+    inputs:
+      command:
+        description: "share | unshare | export"
+        default: export
+      file_id:
+        description: "Drive file id of the reel (share/unshare)"
+        default: ""
+
+permissions:
+  contents: read
+
+concurrency:
+  group: posting-${{ inputs.command || 'doc' }}
+  cancel-in-progress: false
+
+jobs:
+  posting:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GDRIVE_CLIENT_ID: ${{ secrets.GDRIVE_CLIENT_ID }}
+      GDRIVE_CLIENT_SECRET: ${{ secrets.GDRIVE_CLIENT_SECRET }}
+      GDRIVE_REFRESH_TOKEN: ${{ secrets.GDRIVE_REFRESH_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -q google-api-python-client google-auth
+      - name: Refresh Upcoming captions doc
+        if: github.event_name == 'push'
+        run: python pipeline/posting.py upload --file posting/upcoming.md
+      - name: Share / unshare / export
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          CMD: ${{ inputs.command }}
+          FILE_ID: ${{ inputs.file_id }}
+        run: |
+          case "$CMD" in
+            share)   python pipeline/drive.py share --id "$FILE_ID"
+                     sleep 3; curl -sSL -o /dev/null -w "check: http %{http_code} type %{content_type} bytes %{size_download}\n" \
+                       "https://drive.usercontent.google.com/download?id=$FILE_ID&export=download&confirm=t";;
+            unshare) python pipeline/drive.py unshare --id "$FILE_ID";;
+            *)       python pipeline/posting.py export --out upcoming.txt && cat upcoming.txt;;
+          esac
