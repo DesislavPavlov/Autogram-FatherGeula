@@ -64,5 +64,7 @@ GitHub via `gh api` REST only. Queue: `state/post_queue.json` on main.
 
 ## 6. Notify (one short push)
 "📲 Posted: <title>" with the Instagram link if Windsor returns one, then the next 3 titles with their dates.
+Then one buffer line: "Buffer: N reels ready, covering up to <date of last queued entry with a file>." If fewer than
+7 reels are ready, start the notification with "⚠️ Low buffer" and the number of days left.
 Include anything that failed, stated exactly.
 - Upload docs as plain text, so line breaks and markers survive. When posting, strip the text between markers and collapse 3+ newlines to 2.
