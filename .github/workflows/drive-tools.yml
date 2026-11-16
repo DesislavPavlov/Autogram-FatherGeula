@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       command:
-        description: "check | archive"
+        description: "check | archive | status"
         default: check
       pattern:
         description: "archive: regex of in/ file names to move to in_processed/"
@@ -31,4 +31,4 @@ jobs:
           CMD: ${{ inputs.command }}
           PATTERN: ${{ inputs.pattern }}
         run: |
-          if [ "$CMD" = archive ]; then python pipeline/drive.py archive --pattern "$PATTERN"; else python pipeline/drive.py check; fi
+          case "$CMD" in archive) python pipeline/drive.py archive --pattern "$PATTERN";; status) python pipeline/drive.py status --work /tmp/st && ls -R /tmp/st;; *) python pipeline/drive.py check;; esac
