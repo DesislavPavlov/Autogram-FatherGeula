@@ -1,0 +1,375 @@
+{
+  "account": "father.geula",
+  "windsor_account": "17841435561558550",
+  "reels_folder_id": "1GUoy3tjj0_acHkU812UzempuhCVBoe8v",
+  "post_time": "08:40 Europe/Sofia",
+  "skip": "Saturday",
+  "scripts_doc_id": "1FeH1zW6KtzWlIolIIAc_wfGUku0oNJKVqwmMIrrAyQQ",
+  "queue": [
+    {
+      "n": 1,
+      "title": "The Manifesto",
+      "file_id": "1p29qcFnBwOPBfYOQU-IhFy_la19mAUXA",
+      "file": "2026-09-01 The Manifesto.mp4",
+      "planned": "2026-11-17",
+      "status": "queued",
+      "posted_on": null,
+      "media_id": null
+    },
+    {
+      "n": 2,
+      "title": "Why the Hebrew Name",
+      "file_id": "1JpLNLp-58MPXRGCE-dykWCLhy6Z26uy2",
+      "file": "2026-09-08 Father Geula Redemption.mp4",
+      "planned": "2026-11-18",
+      "status": "queued",
+      "posted_on": null,
+      "media_id": null
+    },
+    {
+      "n": 3,
+      "title": "The Robber Who Became a Saint",
+      "file_id": "10nmhmDMl3V1A_KfJrnYrVLHV12OPVkrA",
+      "file": "2026-09-22 Moses the Robber.mp4",
+      "planned": "2026-11-19",
+      "status": "queued",
+      "posted_on": null,
+      "media_id": null
+    },
+    {
+      "n": 4,
+      "title": "Why Do We Pray to Saints?",
+      "file_id": "1hqQwl1wb_K2m5f1O0COVkL64m58Y1dwh",
+      "file": "2026-09-22 Praying to Saints Idolatry.mp4",
+      "planned": "2026-11-20",
+      "status": "queued",
+      "posted_on": null,
+      "media_id": null
+    },
+    {
+      "n": 5,
+      "title": "The Mirror",
+      "file_id": "1nqwqovfU1wfhM9y-pdvfNq0CzWvg_vZW",
+      "file": "2026-09-24 You Already Lost the Morning.mp4",
+      "planned": "2026-11-22",
+      "status": "queued",
+      "posted_on": null,
+      "media_id": null
+    },
+    {
+      "n": 6,
+      "title": "Hammer — Proverbs 16:32",
+      "file_id": "1C3nOnaHAOvetfv2TmzTshVHM2Aui5G5a",
+      "file": "2026-09-29 06 — HAMMER — Proverbs 16 32.mp4",
+      "planned": "2026-11-23",
+      "status": "queued",
+      "posted_on": null,
+      "media_id": null
+    },
+    {
+      "n": 7,
+      "title": "The Church with the Rocket",
+      "file_id": "1U9Ft6xNOasrbmZX9ATBbCukgmylAWiGC",
+      "file": "2026-09-28 The Church with the Rocket (2).mp4",
+      "planned": "2026-11-24",
+      "status": "queued",
+      "posted_on": null,
+      "media_id": null
+    },
+    {
+      "n": 8,
+      "title": "The Man on the Pillar",
+      "file_id": "1DH2L2889VcgppRfTDYopFQxKhhniKbcG",
+      "file": "2026-09-28 The Man on the Pillar.mp4",
+      "planned": "2026-11-25",
+      "status": "queued",
+      "posted_on": null,
+      "media_id": null
+    },
+    {
+      "n": 9,
+      "title": "Four Hundred Contacts, No One to Call",
+      "file_id": "16pz2wjHBi5a127FwE7opaWArupbGYe3t",
+      "file": "2026-09-30 Four Hundred Contacts, No One to Call.mp4",
+      "planned": "2026-11-26",
+      "status": "queued",
+      "posted_on": null,
+      "media_id": null
+    },
+    {
+      "n": 10,
+      "title": "How to Pray When You Feel Nothing",
+      "file_id": "136jvP7XHrsSmgSDIZKX567XtgZNC4Xh5",
+      "file": "2026-10-01 How to Pray When You Feel Nothing.mp4",
+      "planned": "2026-11-27",
+      "status": "queued",
+      "posted_on": null,
+      "media_id": null
+    },
+    {
+      "n": 11,
+      "title": "The Bodies That Didn't Decay",
+      "file_id": "1YGPzl6NHtBlxJjItrzv17CeQMoNd32hW",
+      "file": "2026-10-07 11 — The Bodies That Didn't Decay.mp4",
+      "planned": "2026-11-29",
+      "status": "queued",
+      "posted_on": null,
+      "media_id": null
+    },
+    {
+      "n": 12,
+      "title": "His Testimony",
+      "file_id": "16EgXvK7ua6gpsbUeDOead6T6bVhNcqSr",
+      "file": "2026-10-07 HIS TESTIMONY.mp4",
+      "planned": "2026-11-30",
+      "status": "queued",
+      "posted_on": null,
+      "media_id": null
+    },
+    {
+      "n": 13,
+      "title": "Why Does God Allow Suffering?",
+      "file_id": "1AVuNVYthpvs6vjiUwUT_DKM8RdBC_XjP",
+      "file": "2026-10-07 13 — Why Does God Allow Suffering.mp4",
+      "planned": "2026-12-01",
+      "status": "queued",
+      "posted_on": null,
+      "media_id": null,
+      "note": "Never post on a day Desislav can't watch comments: remind him the day before"
+    },
+    {
+      "n": 14,
+      "title": "The Mountain That Never Stopped Praying",
+      "file_id": "1gZdtYqR1SIOVkyQdh6nAb47tnW2KIlFR",
+      "file": "2026-10-15 The Mountain That Never Stopped Praying.mp4",
+      "planned": "2026-12-02",
+      "status": "queued",
+      "posted_on": null,
+      "media_id": null
+    },
+    {
+      "n": 15,
+      "title": "One Pinch of Incense",
+      "file_id": "1eFg9kGieE9q5ufvVYt9taaS9Biu39hmA",
+      "file": "2026-10-15 One Pinch of Incense.mp4",
+      "planned": "2026-12-03",
+      "status": "queued",
+      "posted_on": null,
+      "media_id": null
+    },
+    {
+      "n": 16,
+      "title": "Motivation Is a Product",
+      "file_id": "1rGJs5hdhCJAoCaTEiuEjvJF4mIdFEzp2",
+      "file": "2026-10-14 Motivation Is a Product.mp4",
+      "planned": "2026-12-04",
+      "status": "queued",
+      "posted_on": null,
+      "media_id": null
+    },
+    {
+      "n": 17,
+      "title": "The Desert Fathers Solved Intrusive Thoughts",
+      "file_id": "1NYfa4-OOHE6PnnvZYmhB_OsPyZJN4bKH",
+      "file": "2026-10-09 The Desert Fathers Solved Intrusive Thoughts.mp4",
+      "planned": "2026-12-06",
+      "status": "queued",
+      "posted_on": null,
+      "media_id": null
+    },
+    {
+      "n": 18,
+      "title": "Hammer — Luke 9:23",
+      "file_id": "1oTkCZcg8LTSYlRpWVhlyXij911ViGAHv",
+      "file": "2026-09-29 18 — HAMMER — Luke 9 23.mp4",
+      "planned": "2026-12-07",
+      "status": "queued",
+      "posted_on": null,
+      "media_id": null
+    },
+    {
+      "n": 19,
+      "title": "On Pornography",
+      "file_id": "1jOfvzkz5RsOYrH7xBEJUmeEMqlS7uB0r",
+      "file": "2026-10-15 19 — On Pornography.mp4",
+      "planned": "2026-12-08",
+      "status": "queued",
+      "posted_on": null,
+      "media_id": null
+    },
+    {
+      "n": 20,
+      "title": "Why Forty",
+      "file_id": "1mCkbmu60xOObACqrPf8kZ5G4uzE8XG4s",
+      "file": "2026-10-17 WHY FORTY.mp4",
+      "planned": "2026-12-09",
+      "status": "queued",
+      "posted_on": null,
+      "media_id": null
+    },
+    {
+      "n": 21,
+      "title": "The Icons That Weep",
+      "file_id": "10T2i42igQTUrGTURHHSX23mY3yvesooy",
+      "file": "2026-10-19 21 - THE ICONS THAT WEEP.mp4",
+      "planned": "2026-12-10",
+      "status": "queued",
+      "posted_on": null,
+      "media_id": null
+    },
+    {
+      "n": 22,
+      "title": "The Monasteries in the Air",
+      "file_id": "155q0OG8adQtFgDzHSvKExQ5A_K2jbPwb",
+      "file": "2026-10-21 22 - THE MONASTERIES IN THE AIR.mp4",
+      "planned": "2026-12-11",
+      "status": "queued",
+      "posted_on": null,
+      "media_id": null
+    },
+    {
+      "n": 23,
+      "title": "Structure Starvation",
+      "file_id": "1X59hU8i-8QYcL4rae37X2idGgQuUaL1d",
+      "file": "2026-10-21 23 - STRUCTURE STARVATION.mp4",
+      "planned": "2026-12-13",
+      "status": "queued",
+      "posted_on": null,
+      "media_id": null
+    },
+    {
+      "n": 24,
+      "title": "Is Fasting Just Self-Harm?",
+      "file_id": "1-K8SuwPf8Mq-sKPiL3bQYzPcpIPZNupi",
+      "file": "2026-10-22 24 - IS FASTING JUST SELF-HARM.mp4",
+      "planned": "2026-12-14",
+      "status": "queued",
+      "posted_on": null,
+      "media_id": null
+    },
+    {
+      "n": 25,
+      "title": "The Two Soldiers on the Wall",
+      "file_id": "1bbpFldaDp3Aa9SSTgn6uC92ioG3nkhFa",
+      "file": "2026-10-27 25 - THE TWO SOLDIERS ON THE WALL.mp4",
+      "planned": "2026-12-15",
+      "status": "queued",
+      "posted_on": null,
+      "media_id": null
+    },
+    {
+      "n": 26,
+      "title": "A Day Under the Rule",
+      "file_id": "10Bp_Yo3E14ukAbotZmu3O6pFDiArHiDA",
+      "file": "2026-10-28 26 - A DAY UNDER THE RULE.mp4",
+      "planned": "2026-12-16",
+      "status": "queued",
+      "posted_on": null,
+      "media_id": null
+    },
+    {
+      "n": 27,
+      "title": "The Enemy Is Inside",
+      "file_id": "16Fk7bvbfjjQ3ojM4qIgpIgjOKhkWj7uT",
+      "file": "2026-11-12 27 — The Enemy Is Inside.mp4",
+      "planned": "2026-12-17",
+      "status": "queued",
+      "posted_on": null,
+      "media_id": null
+    },
+    {
+      "n": 28,
+      "title": "Hammer — 1 Corinthians 9:27",
+      "file_id": "1SN-fkqpHyPZV_v8sp82UjUkuJXhZBpKD",
+      "file": "2026-11-04 28 - HAMMER — 1 CORINTHIANS 9-27.mp4",
+      "planned": "2026-12-18",
+      "status": "queued",
+      "posted_on": null,
+      "media_id": null
+    },
+    {
+      "n": 29,
+      "title": "Can I Pray If I Don't Believe Yet?",
+      "file_id": "1m1PAMa5gLEo2TAQMBvCDAYFEwL0PJpHj",
+      "file": "2026-10-29 29 - CAN I PRAY IF I DON'T BELIEVE YET.mp4",
+      "planned": "2026-12-20",
+      "status": "queued",
+      "posted_on": null,
+      "media_id": null
+    },
+    {
+      "n": 30,
+      "title": "How to Fast Without Wrecking Yourself",
+      "file_id": "16KkUepN0RKQ5u1D0DWSE_1e-Ztaz_EZ9",
+      "file": "2026-10-30 30 - HOW TO FAST WITHOUT WRECKING YOURSELF.mp4",
+      "planned": "2026-12-21",
+      "status": "queued",
+      "posted_on": null,
+      "media_id": null
+    },
+    {
+      "n": 31,
+      "title": "On Being Made",
+      "file_id": "1J_b_8LDbWXd9uvW420F8KcDJJNo-jjEC",
+      "file": "2026-11-02 31 - ON BEING MADE.mp4",
+      "planned": "2026-12-22",
+      "status": "queued",
+      "posted_on": null,
+      "media_id": null,
+      "note": "Transparency piece about being AI-made"
+    },
+    {
+      "n": 32,
+      "title": "The Man Comfort Makes",
+      "file_id": "1iPAMZbg_6XkIxJUyMvqxGzZFl9t7kYEO",
+      "file": "2026-11-04 32 - THE MAN COMFORT MAKES.mp4",
+      "planned": "2026-12-23",
+      "status": "queued",
+      "posted_on": null,
+      "media_id": null,
+      "gate": "Brotherhood must be open: confirm with Desislav before posting; ask in the notification from 3 posting days ahead"
+    },
+    {
+      "n": 33,
+      "title": "The Governed Man",
+      "file_id": "1UwwsrjSDwPuhFq_Ju5A6hx_GvtJHx8kE",
+      "file": "2026-11-06 33 - THE GOVERNED MAN.mp4",
+      "planned": "2026-12-24",
+      "status": "queued",
+      "posted_on": null,
+      "media_id": null,
+      "note": "Must follow #32 directly (fear needs its exit); has an active bio CTA"
+    },
+    {
+      "n": 34,
+      "title": "Willpower Is the Lie",
+      "file_id": "1fSXzsJb_z6C4Ylgs3O--roZrjm-EJU7E",
+      "file": "2026-11-06 34 - WILLPOWER IS THE LIE.mp4",
+      "planned": "2026-12-25",
+      "status": "queued",
+      "posted_on": null,
+      "media_id": null
+    },
+    {
+      "n": 35,
+      "title": "A Body Without a Skeleton",
+      "file_id": "1Zr78jH8g5uNbUubpPCMhfjeLgCLVDWIP",
+      "file": "2026-11-12 35 - A BODY WITHOUT A SKELETON.mp4",
+      "planned": "2026-12-27",
+      "status": "queued",
+      "posted_on": null,
+      "media_id": null
+    },
+    {
+      "n": 36,
+      "title": "The F.A.T.H.E.R. Method",
+      "file_id": null,
+      "file": "(not made yet — 36 - THE F.A.T.H.E.R. METHOD)",
+      "planned": "2026-12-28",
+      "status": "queued",
+      "posted_on": null,
+      "media_id": null,
+      "gate": "Phase 3 launch asset: confirm with Desislav that the product is live before posting"
+    }
+  ]
+}

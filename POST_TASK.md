@@ -7,6 +7,12 @@ GitHub via `gh api` REST only. Queue: `state/post_queue.json` on main.
 ## 1. Pick today's reel
 - Today is Saturday (Europe/Sofia) → stop, no notification.
 - `queue` is in posting order. Today's reel = the first entry with `status: "queued"`.
+- **Gates:** if that entry has a `gate`, post it only once Desislav has confirmed in reply to a notification
+  (for example "Brotherhood is open"). Starting 3 posting days before it, ask in every notification. If it's
+  still unconfirmed on the day, post nothing, keep the queue as is, and ask again. Entries with a `note`:
+  follow it (for example, remind him the day before).
+- An entry with `file_id: null` (a reel not made yet): look it up by title in the reels folder. If it isn't
+  there yet, post nothing and say so.
   If an entry already has `posted_on` = today, today is done → skip to step 5.
 - **New reels:** list the reels folder (`reels_folder_id`) with the Google Drive connector. Every `.mp4` whose
   file id isn't in the queue gets appended at the end (`status: "queued"`), oldest first. Ignore `.archive`
@@ -35,6 +41,8 @@ GitHub via `gh api` REST only. Queue: `state/post_queue.json` on main.
 2. Windsor `execute_action`: connector `instagram`, account `17841435561558550`, action `create_video_post`,
    params `{"video_url": "https://drive.usercontent.google.com/download?id=<id>&export=download&confirm=t",
    "caption": <caption>, "share_to_feed": true}`.
+   Then post the day's `FIRST_COMMENT` block (the hashtags) with `create_comment` on the new media id.
+   The publishing prompt keeps hashtags out of the caption body.
 3. **Always** dispatch `posting.yml` `command=unshare` for that file afterwards, success or not.
 4. If the post fails, retry once. Mark the entry `failed` with the error only if the retry fails too. Never
    post the same reel twice: before retrying, check with Windsor `get_data` (instagram media for today)
@@ -48,6 +56,7 @@ GitHub via `gh api` REST only. Queue: `state/post_queue.json` on main.
 - Build `posting/upcoming.md` for the next 3 posting days after today, skipping Saturdays, from the queue order.
 - Keep any existing block for those dates **verbatim**, since it may contain edits. Write captions only for
   dates without a block.
+- Each block: `=== <date> · <title> ===`, then `<<<CAPTION` … `CAPTION>>>`, then `<<<FIRST_COMMENT` hashtags `FIRST_COMMENT>>>`.
 - Add a header line: "Edit any caption between the markers. Whatever is here at 08:40 on its day gets posted.
   Saturdays are skipped."
 - Then run `git checkout -B posting origin/main`, add the file, commit, `git push --force origin posting`, and
