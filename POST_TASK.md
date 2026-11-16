@@ -65,3 +65,4 @@ GitHub via `gh api` REST only. Queue: `state/post_queue.json` on main.
 ## 6. Notify (one short push)
 "📲 Posted: <title>" with the Instagram link if Windsor returns one, then the next 3 titles with their dates.
 Include anything that failed, stated exactly.
+- Upload docs as plain text, so line breaks and markers survive. When posting, strip the text between markers and collapse 3+ newlines to 2.

@@ -1,4 +1,4 @@
-# Father Geula — upcoming captions
+FATHER GEULA — UPCOMING CAPTIONS
 
 Edit any caption between the markers. Whatever is here at 08:40 on its day gets posted. The FIRST_COMMENT block (hashtags) is posted as the first comment. Saturdays are skipped.
 

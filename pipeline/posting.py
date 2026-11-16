@@ -25,7 +25,7 @@ def cmd_upload(path):
     from googleapiclient.http import MediaFileUpload
     parent = doc_folder()
     existing = drive.child(parent, DOC_NAME)
-    for mime in ("text/markdown", "text/plain"):
+    for mime in ("text/plain",):
         try:
             media = MediaFileUpload(str(path), mimetype=mime)
             if existing:

@@ -51,7 +51,7 @@ def cmd_upload_pending(src):
         if drive.child(pending, name):
             print("  exists, skipped:", name)
             continue
-        for mime in ("text/markdown", "text/plain"):
+        for mime in ("text/plain",):
             try:
                 drive.service().files().create(
                     body={"name": name, "parents": [pending], "mimeType": drive.GDOC},
