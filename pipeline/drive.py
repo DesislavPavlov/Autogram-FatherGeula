@@ -7,6 +7,7 @@ Env: GDRIVE_CLIENT_ID, GDRIVE_CLIENT_SECRET, GDRIVE_REFRESH_TOKEN
   python drive.py push    --work DIR          out/<job>/, bundles/*, moves processed in/ files
   python drive.py deliver --zip FILE --slug S upload job zip to jobs/, trash S's bundle + kickoff
   python drive.py check                       verify the token and show what's in in/
+  python drive.py archive --pattern REGEX     move matching in/ files to in_processed/
 """
 import argparse, io, json, mimetypes, os, pathlib, sys
 
@@ -179,6 +180,21 @@ def cmd_deliver(zip_path, slug):
             print("  🗑", name, "(in Drive trash for 30 days)")
 
 
+def cmd_archive(pattern):
+    """Move in/ files whose name matches the regex into in_processed/ (already-made reels)."""
+    import re
+    base = vo_path()
+    in_id, done_id = folder(base + "/in"), folder(base + "/in_processed")
+    rx = re.compile(pattern, re.I)
+    hits = [f for f in children(in_id, folders=False) if rx.search(f["name"])]
+    for f in sorted(hits, key=lambda f: f["name"]):
+        service().files().update(fileId=f["id"], addParents=done_id, removeParents=in_id,
+                                 fields="id").execute()
+        print("  → in_processed/", f["name"])
+    left = sorted(f["name"] for f in children(in_id, folders=False))
+    print(f"{len(hits)} moved. Still in in/: {', '.join(left) or '(empty)'}")
+
+
 def cmd_check():
     about = service().about().get(fields="user(emailAddress)").execute()
     print("Token OK for", about["user"]["emailAddress"])
@@ -189,10 +205,11 @@ def cmd_check():
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("cmd", choices=["pull", "push", "deliver", "check"])
+    ap.add_argument("cmd", choices=["pull", "push", "deliver", "check", "archive"])
     ap.add_argument("--work")
     ap.add_argument("--zip")
     ap.add_argument("--slug")
+    ap.add_argument("--pattern")
     a = ap.parse_args()
     if a.cmd == "pull":
         cmd_pull(pathlib.Path(a.work))
@@ -200,5 +217,7 @@ if __name__ == "__main__":
         cmd_push(pathlib.Path(a.work))
     elif a.cmd == "deliver":
         cmd_deliver(pathlib.Path(a.zip), a.slug)
+    elif a.cmd == "archive":
+        cmd_archive(a.pattern)
     else:
         cmd_check()
