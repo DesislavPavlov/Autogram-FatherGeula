@@ -1,0 +1,32 @@
+name: Deliver Flow job to Drive
+
+# Claude's daily task force-pushes the `jobs` branch = main + one commit adding
+#   job/job.json   {"slug": "...", "zip": "<slug>_flow_job.zip"}
+#   job/<slug>_flow_job.zip
+# (it has to branch from main so this workflow file exists on the pushed commit)
+on:
+  push:
+    branches: [jobs]
+
+permissions:
+  contents: read
+
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      GDRIVE_CLIENT_ID: ${{ secrets.GDRIVE_CLIENT_ID }}
+      GDRIVE_CLIENT_SECRET: ${{ secrets.GDRIVE_CLIENT_SECRET }}
+      GDRIVE_REFRESH_TOKEN: ${{ secrets.GDRIVE_REFRESH_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -q google-api-python-client google-auth
+      - name: Upload job zip, trash the used bundle + kickoff
+        run: |
+          SLUG=$(python -c "import json;print(json.load(open('job/job.json'))['slug'])")
+          ZIP=$(python -c "import json;print(json.load(open('job/job.json'))['zip'])")
+          python pipeline/drive.py deliver --zip "job/$ZIP" --slug "$SLUG"
