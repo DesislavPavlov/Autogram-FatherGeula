@@ -8,7 +8,7 @@ Daily, with no computer involved:
    `FatherGeula/ideas` (separate ideas with a blank line); when that runs out, Claude picks them itself. The
    writing rules come from `FatherGeula/prompts/script_master_prompt`.
 
-1. **05:17 Sofia: `align.yml`** (GitHub Actions) pulls `FatherGeula/VO/in` from Drive, runs
+1. **06:40 Sofia: `align.yml`**, started by Claude's daily task, (GitHub Actions) pulls `FatherGeula/VO/in` from Drive, runs
    `notebook/Father_Geula_Complete.ipynb` headless (one VO+script pair per day), pushes `out/` and the
    bundle back to Drive, moves the pair to `in_processed/`, and publishes the bundle on the `bundles` branch.
 2. **Claude's scheduled task** builds the Flow job from the bundle + master prompt (see `DAILY_TASK.md`)

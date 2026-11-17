@@ -24,7 +24,7 @@ GitHub via `gh api` REST only. Queue: `state/post_queue.json` on main.
   If today's block (`=== <YYYY-MM-DD> · <title> ===` … `<<<CAPTION` … `CAPTION>>>`) exists, post **that text
   exactly**, because Desislav may have edited it.
 - Otherwise, write it now with the steps below.
-- **Writing a caption:** follow `prompts/publishing_master_prompt.md` (on the `bundles` branch; Drive
+- **Writing a caption:** follow `prompts/publishing_master_prompt.md` (on the `status` branch; Drive
   `FatherGeula/prompts/` if missing). Base it on the reel's actual script. Look for the script in this order:
   `FatherGeula/VO/in_processed/<title>.txt`, `FatherGeula/scripts/rendered/`, the "Father Geula - Scripts
   Revised" Doc, then the reel's zip in the reels folder's `.archive`.

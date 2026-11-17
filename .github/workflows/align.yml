@@ -1,8 +1,7 @@
 name: Align VO and build bundle
 
+# Started each morning by Claude's daily task (GitHub's own cron proved unreliable).
 on:
-  schedule:
-    - cron: "17 3 * * *"      # 05:17 Sofia (winter) / 06:17 (summer)
   workflow_dispatch:
     inputs:
       max_jobs:
@@ -59,17 +58,28 @@ jobs:
         if: always()
         run: python pipeline/drive.py status --work /tmp/pub || echo "status snapshot failed"
 
-      - name: Publish bundle branch
+      - name: Publish status branch (always)
+        if: always()
+        run: |
+          set -e
+          mkdir -p /tmp/pub
+          [ -f work/run_result.json ] && cp work/run_result.json /tmp/pub/ || echo '{"status":"error","error":"runner produced no run_result.json","created_utc":"'"$(date -u +%FT%TZ)"'"}' > /tmp/pub/run_result.json
+          cd /tmp/pub
+          git init -q -b status
+          git config user.name "autogram-bot"; git config user.email "autogram-bot@users.noreply.github.com"
+          git add -A && git commit -q -m "status $(date -u +%F) run ${{ github.run_id }}"
+          git push -q --force "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" status
+
+      - name: Publish bundle branch (only when a bundle was built)
         if: always() && hashFiles('work/run_result.json') != ''
         run: |
           set -e
-          mkdir -p /tmp/pub && cp work/run_result.json /tmp/pub/
-          for z in $(python -c "import json;print(' '.join(b['zip']+' '+b['kickoff_file'] for b in json.load(open('work/run_result.json'))['bundles']))"); do
-            cp "work/bundles/$z" /tmp/pub/
-          done
-          cd /tmp/pub
+          FILES=$(python -c "import json;print(' '.join(b['zip']+' '+b['kickoff_file'] for b in json.load(open('work/run_result.json'))['bundles']))")
+          [ -z "$FILES" ] && { echo "no bundle built; bundles branch left as is"; exit 0; }
+          mkdir -p /tmp/bun && cp work/run_result.json /tmp/bun/
+          for z in $FILES; do cp "work/bundles/$z" /tmp/bun/; done
+          cd /tmp/bun
           git init -q -b bundles
-          git config user.name "autogram-bot"
-          git config user.email "autogram-bot@users.noreply.github.com"
+          git config user.name "autogram-bot"; git config user.email "autogram-bot@users.noreply.github.com"
           git add -A && git commit -q -m "bundle $(date -u +%F) run ${{ github.run_id }}"
           git push -q --force "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" bundles

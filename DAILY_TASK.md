@@ -1,16 +1,29 @@
 # Daily task (run by Claude's scheduled task, 06:40 Sofia)
 
-Runs after `align.yml` (05:17). Repo: DesislavPavlov/Autogram-FatherGeula. GitHub via `gh api` REST only.
-The `bundles` branch holds today's `run_result.json`, `drive_status.json`, `ideas.txt`, `prompts/*.md`
-and the bundle zip. Do **Part A**, then **Part B**, then send **one** notification covering both.
+Repo: DesislavPavlov/Autogram-FatherGeula. GitHub via `gh api` REST only. Do **Step 0**, **Part A**, then
+**Part B**, then send **one** notification covering both.
+
+## Step 0 — start today's align run yourself
+
+GitHub's cron is unreliable, so `align.yml` has no schedule: this task starts it.
+1. If an "Align VO and build bundle" run was created in the last 3 hours, use it (wait for it if it's still
+   running). Otherwise dispatch it:
+   `gh api -X POST repos/DesislavPavlov/Autogram-FatherGeula/actions/workflows/align.yml/dispatches -f ref=main`.
+2. Poll every 60 s for up to 30 min until it completes. On the first run of a month the model download alone can
+   take ~5 min.
+3. Then `git fetch --depth 1 origin +refs/heads/status:refs/remotes/origin/status +refs/heads/bundles:refs/remotes/origin/bundles +refs/heads/jobs:refs/remotes/origin/jobs`.
+   - `origin/status` holds today's `run_result.json`, `drive_status.json`, `ideas.txt` and `prompts/*.md`.
+   - `origin/bundles` holds the newest bundle zip; it's only replaced when a bundle is built.
+4. If the run failed or never finished, say so with the failing step's name, and still do Part B using whatever
+   `origin/status` has (note its date).
 
 ## Part A — today's Flow job
 
-1. Read `run_result.json` from `origin/bundles`.
-   - `created_utc` older than 20 h → align didn't run. Check `gh api repos/{o}/{r}/actions/workflows/align.yml/runs?per_page=1`, report why, skip to Part B.
-   - `status` = `nothing` → report "no VO in the queue today", skip to Part B.
-   - `status` = `error` / `failed` → report the `error` field or the MISMATCH/failed job name, skip to Part B.
-   - `origin/jobs:job/job.json` already has this bundle's slug → already done, skip to Part B.
+1. Read `run_result.json` from `origin/status`.
+   - `status` = `error` / `failed` → report the `error` field or the MISMATCH/failed job name.
+   - Whatever today's status, the bundle to build is the one on `origin/bundles`. If its slug is already in
+     `origin/jobs:job/job.json`, it's done: report "no new VO today" if today's status was `nothing`, and skip to
+     Part B. This also picks up a bundle that an earlier day failed to build.
 2. Extract `<slug>_input.zip` and act on the `kickoff` message as if Desislav had pasted it: read `START_HERE.md`,
    then carry out `MASTER_PROMPT.md` exactly, including every validation it requires, producing `<slug>_flow_job.zip`.
    Standing rules that always apply, even if the master prompt is older than they are:
@@ -25,9 +38,9 @@ and the bundle zip. Do **Part A**, then **Part B**, then send **one** notificati
 
 ## Part B — keep voiceovers 2 days ahead
 
-1. From `drive_status.json`: `need = max(0, 2 - queue_days)` (`queue_days` = VO pairs in `in/` + approved + pending
+1. From `drive_status.json` on `origin/status`: `need = max(0, 2 - queue_days)` (`queue_days` = VO pairs in `in/` + approved + pending
    scripts). `need = 0` → skip to the notification, but mention any `scripts_pending` still waiting for approval.
-2. Requires `prompts/script_master_prompt.md` on the bundles branch (from Drive `FatherGeula/prompts/`). Missing →
+2. Requires `prompts/script_master_prompt.md` on the status branch (from Drive `FatherGeula/prompts/`). Missing →
    say so in the notification and skip.
 3. For each script needed, numbered from `next_number` upward:
    - **Idea:** the first idea in `ideas.txt` (ideas are separated by blank lines) whose text isn't already in
