@@ -26,7 +26,8 @@ GitHub via `gh api` REST only. Queue: `state/post_queue.json` on main.
 - Otherwise, write it now with the steps below.
 - **Writing a caption:** follow `prompts/publishing_master_prompt.md` (on the `status` branch; Drive
   `FatherGeula/prompts/` if missing). Base it on the reel's actual script. Look for the script in this order:
-  `FatherGeula/VO/in_processed/<title>.txt`, `FatherGeula/scripts/rendered/`, the "Father Geula - Scripts
+  `FatherGeula/scripts/rendered/` (newer reels; its "On-screen hook options" section: the **first** option is the
+  hook to audit), `FatherGeula/VO/in_processed/<title>.txt`, the "Father Geula - Scripts
   Revised" Doc, then the reel's zip in the reels folder's `.archive`.
   - Derive keywords fresh from the script, and use 3–5 hashtags.
   - Follow the brand rules: no fabricated claims, KJV only, wonders framed as claimed, no product or selling

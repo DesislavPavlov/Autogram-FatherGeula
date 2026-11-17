@@ -45,7 +45,10 @@ GitHub's cron is unreliable, so `align.yml` has no schedule: this task starts it
 3. For each script needed, numbered from `next_number` upward:
    - **Idea:** the first idea in `ideas.txt` (ideas are separated by blank lines) whose text isn't already in
      `state/used_ideas.json` on main. If none is left, pick one yourself: the content pillar least represented in
-     the recent `known_titles`, and a topic none of the `known_titles` already covers.
+     the recent `known_titles`, and a topic none of them already covers. Compare by **theme**, not just by
+     title: also check every title in `state/post_queue.json` and the "Father Geula - Scripts Revised" Doc
+     (Drive connector). If another script already tells the same story, wonder, saint or place, pick
+     something else. A new angle on an old theme is fine only if the notes say what is new.
    - **Write it** exactly as `script_master_prompt.md` specifies (new idea → Job B; a pasted story/testimony →
      Job C with the story verbatim), scored for ElevenLabs v3 audio tags.
    - **Brand rules** (always): no fabricated statistics, testimonials or unverified claims; KJV only, with every

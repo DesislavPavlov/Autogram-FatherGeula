@@ -196,8 +196,34 @@ def cmd_archive(pattern):
     print(f"{len(hits)} moved. Still in in/: {', '.join(left) or '(empty)'}")
 
 
+DOCX = "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+
+
+def docx_text(data):
+    """Plain text from .docx bytes (stdlib only): one line per paragraph, tabs and breaks kept."""
+    import re, zipfile
+    from xml.etree import ElementTree as ET
+    W = "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}"
+    root = ET.fromstring(zipfile.ZipFile(io.BytesIO(data)).read("word/document.xml"))
+    lines = []
+    for p in root.iter(W + "p"):
+        parts = []
+        for el in p.iter():
+            if el.tag == W + "t":
+                parts.append(el.text or "")
+            elif el.tag == W + "tab":
+                parts.append("\t")
+            elif el.tag in (W + "br", W + "cr"):
+                parts.append("\n")
+        style = p.find(f"{W}pPr/{W}pStyle")
+        text = "".join(parts)
+        level = re.match(r"Heading(\d)", style.get(W + "val", "")) if style is not None else None
+        lines.append(("#" * int(level.group(1)) + " " if level and text else "") + text)
+    return re.sub(r"\n{3,}", "\n\n", "\n".join(lines)).strip() + "\n"
+
+
 def export_text(f):
-    """Plain text of a Drive file (native Doc -> text/plain, else raw bytes as UTF-8)."""
+    """Plain text of a Drive file: native Doc -> text/plain, .docx -> parsed, else bytes as UTF-8."""
     svc = service()
     if f["mimeType"] == GDOC:
         data = svc.files().export(fileId=f["id"], mimeType="text/plain").execute()
@@ -205,6 +231,8 @@ def export_text(f):
         return None
     else:
         data = svc.files().get_media(fileId=f["id"]).execute()
+        if f["mimeType"] == DOCX or f["name"].lower().endswith(".docx"):
+            return docx_text(data)
     return data.decode("utf-8-sig", "replace") if isinstance(data, bytes) else data
 
 
@@ -227,6 +255,12 @@ def cmd_status(out_dir):
     known = stems(children(folder(base + "/in_processed"), folders=False)) + stems(in_files) \
         + status["scripts_pending"] + status["scripts_approved"] + status["scripts_rendered"]
     nums = [n for n in map(_num, known) if n is not None]
+    # finished reels too (FatherGeula/<...>/ready, named "YYYY-MM-DD <title>.mp4"), so ideas never repeat a posted theme
+    import re
+    for ready in service().files().list(q=f"name = 'ready' and mimeType = '{FOLDER}' and trashed = false",
+                                        fields="files(id)").execute().get("files", []):
+        known += [re.sub(r"^\d{4}-\d{2}-\d{2}\s+", "", pathlib.Path(f["name"]).stem)
+                  for f in children(ready["id"], folders=False) if f["name"].lower().endswith(".mp4")]
     status["known_titles"] = sorted(set(known), key=lambda t: (_num(t) or 0, t))
     status["next_number"] = (max(nums) + 1) if nums else 1
     status["queue_days"] = len(status["in_pairs"]) + len(status["scripts_approved"]) + len(status["scripts_pending"])
