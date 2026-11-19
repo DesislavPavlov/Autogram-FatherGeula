@@ -36,9 +36,11 @@
       "file_id": "10nmhmDMl3V1A_KfJrnYrVLHV12OPVkrA",
       "file": "2026-09-22 Moses the Robber.mp4",
       "planned": "2026-11-19",
-      "status": "queued",
-      "posted_on": null,
-      "media_id": null
+      "status": "posted",
+      "posted_on": "2026-11-19",
+      "media_id": "18106774850199714",
+      "permalink": "https://www.instagram.com/reel/Df6driVBNJ0/",
+      "caption": "St Moses the Black: slave, thief and gang leader in 4th-century Egypt. The Church calls him a saint. Here is how.\n\nTradition says he led some seventy-five robbers along the Nile. Hiding from the authorities, he stumbled into the desert monastery at Scetis, and the quiet of the monks broke him open.\n\nIt did not go smoothly. The violence did not leave him overnight. He struggled for years and was convinced he would never be holy enough.\n\nWhen the brothers once gathered to condemn another man, he walked in carrying a leaking jug. My sins run out behind me where I cannot see them, he said, and today I have come to judge another.\n\nHe died a priest, refusing to raise his hand against the raiders who killed him.\n\n\"Where sin abounded, grace did much more abound.\" Romans 5:20.\n\nYou are not too far gone, brother. Save this for the day you think you are."
     },
     {
       "n": 4,
@@ -374,6 +376,16 @@
       "posted_on": null,
       "media_id": null,
       "gate": "Phase 3 launch asset: confirm with Desislav that the product is live before posting"
+    },
+    {
+      "n": 37,
+      "title": "Get in the Net",
+      "file_id": "1y5andnXlJ3KNivaUcHLMLMwu04BG3C01",
+      "file": "2026-11-18 37 - GET IN THE NET.mp4",
+      "planned": "2026-12-29",
+      "status": "queued",
+      "posted_on": null,
+      "media_id": null
     }
   ]
 }
