@@ -2,60 +2,64 @@ FATHER GEULA — UPCOMING CAPTIONS
 
 Edit any caption between the markers. Whatever is here at 08:40 on its day gets posted. The FIRST_COMMENT block (hashtags) is posted as the first comment. Saturdays are skipped.
 
-=== 2026-11-17 · The Manifesto ===
+=== 2026-11-22 · The Mirror ===
 <<<CAPTION
-Motivation won't save you. Here is what an Orthodox priest actually believes about the man who feels soft.
+Phone first thing in the morning? Then you knelt before you ever stood. A priest on the first minute of your day.
 
-You were not born soft. You were made soft — by the screen, by comfort, by a thousand small surrenders you stopped noticing years ago.
+Your hand finds the glowing rectangle before your feet find the floor. You call it rest. It is not rest. It is surrender, practised so many mornings you no longer feel it happening.
 
-The shame you carry is not your enemy. It is the last honest thing left in you: the part that still remembers who you were meant to be.
+A boy of eight can sit still longer than most grown men can. That is not an insult, brother. That is a diagnosis.
 
-I will not comfort you. I will tell you the truth, and what men have done about it for two thousand years. Prayer. Fasting. Iron. Cold. Silence.
+"Be sober, be vigilant." 1 Peter 5:8.
 
-Kneel. Choose. Begin.
+Sober from the first minute. Vigilant at the gate of your own mind.
 
-Follow if you would rather have the truth than another morning routine.
+So tomorrow, do not reach. Rise. Leave the screen where it lies and stand in the silence you have been running from.
+
+Let the first thing you master each day be yourself.
+
+Save this tonight, then put the phone in another room before you sleep.
 CAPTION>>>
 <<<FIRST_COMMENT
-#orthodoxchristian #orthodoxpriest #christianmen #prayerandfasting #easternorthodox
+#morningprayer #digitalfasting #christianmen #orthodoxchristian
 FIRST_COMMENT>>>
 
-=== 2026-11-18 · Why the Hebrew Name ===
+=== 2026-11-23 · Hammer — Proverbs 16:32 ===
 <<<CAPTION
-Why does a Christian priest have a Hebrew name? Geula means redemption, and the contradiction is the whole testimony.
+Proverbs 16:32 on what real strength is: not taking a city, but ruling your own spirit.
 
-For a thousand years Israel waited for redemption. The prophets named it. The psalms bled for it.
+"He that is slow to anger is better than the mighty; and he that ruleth his spirit than he that taketh a city." Proverbs 16:32.
 
-"He sent redemption unto his people: he hath commanded his covenant for ever." Psalm 111:9.
+Any man can raise his voice. Few can hold it when everything in him wants to strike back.
 
-The name I carry is not a prayer for something still coming. It says the Redeemer has already come.
-
-Your Egypt might be a phone, or a habit you cannot say out loud. Your redemption is not a feeling, a course or a routine. It is a Person.
-
-"Choose you this day whom ye will serve." Joshua 24:15.
-
-Send this to the man who thinks the waiting is still going on.
+Rule yourself first, brother. Save this for the next time your temper rises.
 CAPTION>>>
 <<<FIRST_COMMENT
-#geula #hebrewmeaning #orthodoxpriest #orthodoxchristian
+#proverbs1632 #slowtoanger #selfmastery #orthodoxchristian
 FIRST_COMMENT>>>
 
-=== 2026-11-19 · The Robber Who Became a Saint ===
+=== 2026-11-24 · The Church with the Rocket ===
 <<<CAPTION
-St Moses the Black: slave, thief and gang leader in 4th-century Egypt. The Church calls him a saint. Here is how.
+Is there really a rocket painted in a Bulgarian church? The Dobarsko fresco, and what it actually shows.
 
-Tradition says he led some seventy-five robbers along the Nile. Hiding from the authorities, he stumbled into the desert monastery at Scetis, and the quiet of the monks broke him open.
+In the village of Dobarsko, up in the Rila mountains, there is a church four hundred years old where Christ appears to sit inside a rocket. A Swiss writer put it in a film in the seventies, and people have driven up to see it ever since.
 
-It did not go smoothly. The violence did not leave him overnight. He struggled for years and was convinced he would never be holy enough.
+I have seen it. It does look like a rocket.
 
-When the brothers once gathered to condemn another man, he walked in carrying a leaking jug. My sins run out behind me where I cannot see them, he said, and today I have come to judge another.
+It is the Transfiguration. Christ in glory on the mountain, wrapped in a mandorla, the almond of light Orthodox iconographers have painted around Him for more than a thousand years. Not a machine. Uncreated light, painted by a man who never saw an engine.
 
-He died a priest, refusing to raise his hand against the raiders who killed him.
+"And was transfigured before them: and his face did shine as the sun, and his raiment was white as the light." Matthew 17:2.
 
-"Where sin abounded, grace did much more abound." Romans 5:20.
+What troubles me about the rocket story is not that it is false. It is that it is smaller than the truth.
 
-You are not too far gone, brother. Save this for the day you think you are.
+The church was raised in 1614, under Ottoman rule, when Christians were forbidden to build a church that stood tall. So they dug the floor down into the earth and built their height downward, where no one would see. Then they covered the walls with saints. Warriors, mostly. Theodore Tiron. Theodore Stratelates. Men who did not bend.
+
+There is a legend on that ground too: that blinded soldiers of Tsar Samuil wandered into the village, washed their empty eyes at the spring, and saw.
+
+Men forbidden to build upward built downward, and filled the dark with light. That is the mystery, brother. Not a rocket.
+
+Send this to the friend who still thinks it is a rocket.
 CAPTION>>>
 <<<FIRST_COMMENT
-#mosestheblack #desertfathers #orthodoxsaints #churchhistory
+#dobarsko #bulgarianorthodox #orthodoxiconography #transfiguration
 FIRST_COMMENT>>>
