@@ -1,0 +1,28 @@
+{
+  "created_utc": "2026-11-21T00:06:05+00:00",
+  "run_id": "44841392010",
+  "status": "bundled",
+  "jobs": [
+    {
+      "audio": "40 - THE BISHOP WHO GAVE IN SECRET.mp3",
+      "script": "40 - THE BISHOP WHO GAVE IN SECRET.txt"
+    }
+  ],
+  "problems": [
+    "1 more job(s) waiting for later runs: 41 - THE ROCK THEY SENT HIM TO.mp3"
+  ],
+  "bundles": [
+    {
+      "slug": "40_the_bishop_who_gave_in_secret",
+      "zip": "40_the_bishop_who_gave_in_secret_input.zip",
+      "kickoff_file": "40_the_bishop_who_gave_in_secret_kickoff.txt",
+      "kickoff": "Father Geula production job: “40 - THE BISHOP WHO GAVE IN SECRET”.\nThe attached 40_the_bishop_who_gave_in_secret_input.zip is a complete input bundle. Unzip it, read START_HERE.md, then carry out MASTER_PROMPT.md exactly, using the bundle's files as the inputs it lists. Deliver 40_the_bishop_who_gave_in_secret_flow_job.zip.",
+      "mb": 2.01
+    }
+  ],
+  "moved": [
+    "40 - THE BISHOP WHO GAVE IN SECRET.mp3",
+    "40 - THE BISHOP WHO GAVE IN SECRET.txt"
+  ],
+  "error": null
+}
