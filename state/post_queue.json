@@ -60,9 +60,10 @@
       "file_id": "1nqwqovfU1wfhM9y-pdvfNq0CzWvg_vZW",
       "file": "2026-09-24 You Already Lost the Morning.mp4",
       "planned": "2026-11-22",
-      "status": "queued",
-      "posted_on": null,
-      "media_id": null
+      "status": "posted",
+      "posted_on": "2026-11-22",
+      "media_id": "18083333939549612",
+      "caption": "Phone first thing in the morning? Then you knelt before you ever stood. A priest on the first minute of your day.\n\nYour hand finds the glowing rectangle before your feet find the floor. You call it rest. It is not rest. It is surrender, practised so many mornings you no longer feel it happening.\n\nA boy of eight can sit still longer than most grown men can. That is not an insult, brother. That is a diagnosis.\n\n\"Be sober, be vigilant.\" 1 Peter 5:8.\n\nSober from the first minute. Vigilant at the gate of your own mind.\n\nSo tomorrow, do not reach. Rise. Leave the screen where it lies and stand in the silence you have been running from.\n\nLet the first thing you master each day be yourself.\n\nSave this tonight, then put the phone in another room before you sleep."
     },
     {
       "n": 6,
@@ -395,6 +396,16 @@
       "file_id": "1WRPQI8y0NoLak7iZIpRKGMBy-REaqyxj",
       "file": "2026-11-19 38 - THE FIRE FROM THE TOMB.mp4",
       "planned": "2026-12-30",
+      "status": "queued",
+      "posted_on": null,
+      "media_id": null
+    },
+    {
+      "n": 39,
+      "title": "How the Day Should End",
+      "file_id": "1XGq7z6fC387dZ_TtWWvNIj2YrL-7bPv9",
+      "file": "2026-11-20 39 - HOW THE DAY SHOULD END.mp4",
+      "planned": "2026-12-31",
       "status": "queued",
       "posted_on": null,
       "media_id": null
