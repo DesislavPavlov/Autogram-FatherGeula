@@ -2,60 +2,82 @@ FATHER GEULA — UPCOMING CAPTIONS
 
 Edit any caption between the markers. Whatever is here at 08:40 on its day gets posted. The FIRST_COMMENT block (hashtags) is posted as the first comment. Saturdays are skipped.
 
-=== 2026-11-17 · The Manifesto ===
+=== 2026-11-29 · The Bodies That Didn't Decay ===
 <<<CAPTION
-Motivation won't save you. Here is what an Orthodox priest actually believes about the man who feels soft.
+Why didn't some saints' bodies decay? The Church calls them the incorrupt. A priest on what is claimed, and what isn't.
 
-You were not born soft. You were made soft — by the screen, by comfort, by a thousand small surrenders you stopped noticing years ago.
+Every body decays. And yet the Church keeps telling of bodies that did not.
 
-The shame you carry is not your enemy. It is the last honest thing left in you: the part that still remembers who you were meant to be.
+They are called the incorrupt: saints exhumed years, sometimes centuries, after burial and reported found intact. Not embalmed. Not treated. Some are said to have carried a fragrance instead of what you would expect.
 
-I will not comfort you. I will tell you the truth, and what men have done about it for two thousand years. Prayer. Fasting. Iron. Cold. Silence.
+I am a priest, not a fool. Some cases have plain natural explanations. Cold ground, dry air, the chemistry of a particular tomb. Some claims were stretched by men who badly wanted a miracle.
 
-Kneel. Choose. Begin.
+And the Church has never taught that an incorrupt body proves a man was holy. It is not proof. It is a sign, and signs can be misread.
 
-Follow if you would rather have the truth than another morning routine.
+So why have the faithful always taken it seriously?
+
+Because Christianity does not despise the body. The flesh is not a prison to escape. The body is a temple. It will rise. What goes into the ground is not rubbish. It is seed.
+
+"It is sown in corruption; it is raised in incorruption." 1 Corinthians 15:42.
+
+When a body refuses to rot, the faithful do not cry magic. They say: here is a preview.
+
+Treat yours accordingly, brother. It is not a rental. It is going somewhere.
+
+Send this to the friend who asked you whether the incorrupt saints are real.
 CAPTION>>>
 <<<FIRST_COMMENT
-#orthodoxchristian #orthodoxpriest #christianmen #prayerandfasting #easternorthodox
+#incorruptsaints #holyrelics #orthodoxsaints #resurrectionofthebody
 FIRST_COMMENT>>>
 
-=== 2026-11-18 · Why the Hebrew Name ===
+=== 2026-11-30 · His Testimony ===
 <<<CAPTION
-Why does a Christian priest have a Hebrew name? Geula means redemption, and the contradiction is the whole testimony.
+Why should you listen to a priest? Because I was soft, adrift and ashamed once too. Here is what got me out.
 
-For a thousand years Israel waited for redemption. The prophets named it. The psalms bled for it.
+There was a long season, and an ugly one, when comfort felt like freedom and tasted like ash. I will not dress it up for you.
 
-"He sent redemption unto his people: he hath commanded his covenant for ever." Psalm 111:9.
+No one came to save me. What pulled me out was not a course. It was not a routine. It was not a voice telling me to believe in myself.
 
-The name I carry is not a prayer for something still coming. It says the Redeemer has already come.
+It was cold water before sunrise. Iron. Silence. Fasting. Prayer on my knees when I did not feel like praying, which was most days.
 
-Your Egypt might be a phone, or a habit you cannot say out loud. Your redemption is not a feeling, a course or a routine. It is a Person.
+Day after day. Year after year. That is how I came to carry the name Geula. It is Hebrew for redemption. Not because I am holy. I am not. I chose the harder road, and I kept choosing it.
 
-"Choose you this day whom ye will serve." Joshua 24:15.
+So hear me, brother. You are not tired. You are untrained. You are not broken. You are unstructured.
 
-Send this to the man who thinks the waiting is still going on.
+"Therefore if any man be in Christ, he is a new creature: old things are passed away; behold, all things are become new." 2 Corinthians 5:17.
+
+And if what you are drowning in is an addiction, do not try to climb out alone. Tell a priest, a doctor, someone who will hold the rope with you.
+
+Save this for the morning you want to stay soft.
 CAPTION>>>
 <<<FIRST_COMMENT
-#geula #hebrewmeaning #orthodoxpriest #orthodoxchristian
+#christiantestimony #orthodoxchristian #fastingandprayer #disciplineformen
 FIRST_COMMENT>>>
 
-=== 2026-11-19 · The Robber Who Became a Saint ===
+=== 2026-12-01 · Why Does God Allow Suffering? ===
 <<<CAPTION
-St Moses the Black: slave, thief and gang leader in 4th-century Egypt. The Church calls him a saint. Here is how.
+Why does God allow suffering? A priest on the oldest question, and why the answer is not an explanation.
 
-Tradition says he led some seventy-five robbers along the Nile. Hiding from the authorities, he stumbled into the desert monastery at Scetis, and the quiet of the monks broke him open.
+If God is good, why did He let you suffer? I am not going to insult you with a small answer.
 
-It did not go smoothly. The violence did not leave him overnight. He struggled for years and was convinced he would never be holy enough.
+So first, what I will not say. I will not tell you your pain was a lesson. I will not tell you it happened for a reason you will understand later. That is cheap comfort, and grieving men have been handed enough of it.
 
-When the brothers once gathered to condemn another man, he walked in carrying a leaking jug. My sins run out behind me where I cannot see them, he said, and today I have come to judge another.
+The Scriptures do not say it either. Read the book of Job. God never explains Himself to Job. Not once.
 
-He died a priest, refusing to raise his hand against the raiders who killed him.
+What Christianity says instead is stranger than an explanation. God did not watch suffering from a distance. He entered it. Betrayed. Abandoned by His friends. Tortured by an occupying army and executed. And on the cross He cried out:
 
-"Where sin abounded, grace did much more abound." Romans 5:20.
+"My God, my God, why hast thou forsaken me?" Matthew 27:46.
 
-You are not too far gone, brother. Save this for the day you think you are.
+The prayer of every suffering man, my God, why, is a prayer God Himself has prayed.
+
+"He is despised and rejected of men; a man of sorrows, and acquainted with grief." Isaiah 53:3.
+
+So I cannot tell you why it happened. I can tell you that you are not shouting into an empty sky. The God you are shouting at knows exactly what you feel, from the inside.
+
+If you are in the middle of it right now, do not carry it alone. Speak to someone: a priest, a doctor, a brother. That is not weakness. That is what men are for.
+
+Send this to the friend who keeps asking why.
 CAPTION>>>
 <<<FIRST_COMMENT
-#mosestheblack #desertfathers #orthodoxsaints #churchhistory
+#problemofsuffering #bookofjob #manofsorrows #orthodoxchristian
 FIRST_COMMENT>>>
