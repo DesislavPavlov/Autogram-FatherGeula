@@ -1,0 +1,2 @@
+Father Geula production job: “45 - THE CORNER OF YOUR ROOM”.
+The attached 45_the_corner_of_your_room_input.zip is a complete input bundle. Unzip it, read START_HERE.md, then carry out MASTER_PROMPT.md exactly, using the bundle's files as the inputs it lists. Deliver 45_the_corner_of_your_room_flow_job.zip.
