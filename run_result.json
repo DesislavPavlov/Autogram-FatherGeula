@@ -1,0 +1,28 @@
+{
+  "created_utc": "2026-11-28T00:12:27+00:00",
+  "run_id": "46086552722",
+  "status": "bundled",
+  "jobs": [
+    {
+      "audio": "45 - THE CORNER OF YOUR ROOM.mp3",
+      "script": "45 - THE CORNER OF YOUR ROOM.txt"
+    }
+  ],
+  "problems": [
+    "1 more job(s) waiting for later runs: 46 - THE FACE BRIGHTER THAN THE SUN.mp3"
+  ],
+  "bundles": [
+    {
+      "slug": "45_the_corner_of_your_room",
+      "zip": "45_the_corner_of_your_room_input.zip",
+      "kickoff_file": "45_the_corner_of_your_room_kickoff.txt",
+      "kickoff": "Father Geula production job: “45 - THE CORNER OF YOUR ROOM”.\nThe attached 45_the_corner_of_your_room_input.zip is a complete input bundle. Unzip it, read START_HERE.md, then carry out MASTER_PROMPT.md exactly, using the bundle's files as the inputs it lists. Deliver 45_the_corner_of_your_room_flow_job.zip.",
+      "mb": 1.77
+    }
+  ],
+  "moved": [
+    "45 - THE CORNER OF YOUR ROOM.mp3",
+    "45 - THE CORNER OF YOUR ROOM.txt"
+  ],
+  "error": null
+}
